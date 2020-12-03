@@ -1,0 +1,36 @@
+import java.util.Scanner;
+
+public class shopping10 {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        String isContinue;//因为在28行判断处新增变量的话作用域达不到while中所以在mian里定义后赋值
+        int money = 0;
+        do {
+            System.out.println("**********************************************");
+            System.out.println("请选择购买的服装：");
+            System.out.println("1.T 恤(100$)     2.夹 克(200$)     3..衬 衫(300$)     ");
+            System.out.println("*********************************************");
+            System.out.println("请输入商品编号：");
+            int choice = input.nextInt();//用户输入数字
+            if (choice == 1){
+                System.out.println("T 恤\t"+100);
+                money = money +100;
+            }else if (choice == 2){
+                System.out.println("夹 克\t"+200);
+                money = money +200;
+            }else if (choice == 3){
+                System.out.println("衬 衫\t"+300);
+                money = money +300;
+            }else{
+                System.out.println("输入有误！");
+            }
+            System.out.println("是否继续？ y/n");
+            isContinue = input.next();//用户输入y/n
+
+        }while (isContinue.equals("y"));{
+            System.out.println("money："+money);
+        }//while循环，诺while内判断为真则不执行while内语句，为假则执行，do--while先执行do中，再执行while，while为假则返回到do
+
+        
+    }
+}
